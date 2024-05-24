@@ -1,0 +1,21 @@
+1- Creer manuellement le fichier d'output
+2- <infile cmd 1 | cmd 2> outfile.txt
+3- Affiche resultat
+
+CAS I :
+SI
+4- On refait la meme commande <infile grep -e e | cat> outfile.txt SANS CHANGER L'INPUT
+ALORS
+5- Rien ne s'affiche
+
+CAS II :
+SI
+4- On change les commandes
+OU
+4- On change les donnees dans l'input
+ALORS
+5- Un nouveau resultat s'affiche
+
+
+DROIT DE l'OUTPUT
+-rw-r--r--
