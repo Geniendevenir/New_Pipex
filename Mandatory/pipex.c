@@ -6,7 +6,7 @@
 /*   By: adebert <adebert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 18:07:02 by adebert           #+#    #+#             */
-/*   Updated: 2024/05/24 14:22:26 by adebert          ###   ########.fr       */
+/*   Updated: 2024/05/24 15:55:45 by adebert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ int	main(int argc, char **argv, char **envp)
 		msg(ERR_INPUT);
 	file_opening(&file, argv);
 	if (pipe(file.fd) == -1)
-		msg(ERR_PIPE);
+		msg(ERR_PIPE); // fermer les fd
 	pid1 = fork();
 	if (pid1 == -1)
-		msg(ERR_FORK);
+		msg(ERR_FORK); // fermer les fd et files
 	if (pid1 == 0)
 		first_child(&file, argv, envp);
 	pid2 = fork();
 	if (pid2 == -1)
-		msg(ERR_FORK);
+		msg(ERR_FORK); // fermer les fd et files
 	if (pid2 == 0)
 		second_child(&file, argv, envp);
 	close_pipe(&file, 0);

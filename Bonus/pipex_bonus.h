@@ -6,7 +6,7 @@
 /*   By: adebert <adebert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 18:07:09 by adebert           #+#    #+#             */
-/*   Updated: 2024/05/24 15:20:17 by adebert          ###   ########.fr       */
+/*   Updated: 2024/05/24 16:30:06 by adebert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_struct
 	int	fd[2];
 	int	infile;
 	int	outfile;
+	int	nbr_cmd;
 }	t_struct;
 
 int		check_path(char *envp);
